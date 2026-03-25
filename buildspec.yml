@@ -1,0 +1,22 @@
+on: 0.2
+
+phases:
+    install:
+          runtime-versions:
+                  java: corretto17
+                      commands:
+                              - apt-get update -y
+                                    - apt-get install git unzip -y
+
+                                      build:
+                                            commands:
+                                                    - pwd
+                                                          - ls -la
+                                                                - chmod 700 build.sh
+                                                                      - cd src && sh ../build.sh
+                                                                            - mv ROOT.war ../app.war
+
+                                            artifacts:
+                                                files:
+                                                      - app.war
+                                                        discard-paths: true
